@@ -6,4 +6,4 @@ Run thin:
     
 Run the backend:
 
-    $ ruby racked_sinatra.rb
+    $ ruby rabbit_rackup.rb

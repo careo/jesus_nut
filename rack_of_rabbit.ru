@@ -7,8 +7,8 @@ require 'rack'
 
 require 'rack_of_rabbit'
 
-use Rack::ShowExceptions
-use Rack::ShowStatus
-use Rack::Reloader
-
+#use Rack::ShowExceptions
+#use Rack::ShowStatus
+#use Rack::Reloader
+#
 run RackOfRabbit.new

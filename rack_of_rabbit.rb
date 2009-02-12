@@ -17,6 +17,7 @@ class RackOfRabbit
     @setup = false
     @reply_to = UUID.generate
     @pending = Hash.new
+    EventMachine::set_max_timers(1_000_000)
   end
   
   # Need a separate "initialize" step that happens after Thin and company

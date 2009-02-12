@@ -25,7 +25,7 @@ class RackOfRabbit
   def setup
     #AMQP.logging = true
     @mq = MQ.new
-    @requests = @mq.topic('requests',:auto_delete => true)
+    @requests = @mq.queue('rabbit_rackup',:auto_delete => true)
     @setup = true
     @mq.queue(@reply_to).subscribe { |info, response|
       resp = JSON.parse response

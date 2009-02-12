@@ -16,7 +16,8 @@ EM.run {
   end
   
   amq = MQ.new
-  amq.queue(UUID.generate,:auto_delete => true).bind(amq.topic('requests',:auto_delete => true)).subscribe{ |info,request|
+  #amq.queue(UUID.generate,:auto_delete => true).bind(amq.topic('requests',:auto_delete => true)).subscribe{ |info,request|
+  amq.queue("rabbit_rackup",:auto_delete => true).subscribe{ |info,request|
     env = JSON.parse(request)
 
     # Massage some rack values back into shape

@@ -1,6 +1,6 @@
 # The Jesus Nut
-    (c) 2009 Dane Jensen (careo), mostly.
-    some bits shamelessly borrowed from ezmobius and somic
+   (c) 2009 Dane Jensen (careo), mostly.
+   some bits shamelessly borrowed from ezmobius and somic
 
 A 'jesus nut' is another name for the 'main rotor retaining nut'. In this case, the name comes from the fact that these experiments were partially used to test out a possible architecture in which it might be a rather large single point of failure.
 
@@ -10,8 +10,7 @@ See http://en.wikipedia.org/wiki/Jesus_nut for more about the origins of name.
 
 ## Setup
 
-The Thin examples require raggi's async thin:
-    http://github.com/raggi/thin/tree/async_for_rack
+The Thin examples require [raggi's async thin](http://github.com/raggi/thin/tree/async_for_rack)
 
 ## Running
 

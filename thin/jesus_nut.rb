@@ -1,7 +1,8 @@
+# Mostly just ezmobius's nanite example and somic's rabbitbal
+
 require 'rubygems'
-require 'uuid'
 require 'mq'
-#require 'json'
+
 
 class JesusNut
 
@@ -17,7 +18,6 @@ class JesusNut
     @setup = false
     @reply_to = UUID.generate
     @pending = Hash.new
-    #EventMachine.set_max_timers 1_000_000
   end
   
   # Need a separate "initialize" step that happens after Thin and company
@@ -29,7 +29,6 @@ class JesusNut
     @requests = @mq.queue('jesus_nut',:auto_delete => true)
     @setup = true
     @mq.queue(@reply_to).subscribe { |info, response|
-      #resp = JSON.parse response
       resp = Marshal.load response
       callback = @pending.delete info.message_id
       callback.call resp
@@ -48,7 +47,6 @@ class JesusNut
     env['rack.input'] = input.to_s
     
     # the ID of the request
-    #message_id = UUID.generate
     @id += 1
     message_id = @id.to_s
     

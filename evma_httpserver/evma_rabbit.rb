@@ -68,6 +68,7 @@ include EM::HttpServer
 end
 
 EM.run{
+  EM.kqueue
   EM.start_server '0.0.0.0', 8080, MyHttpServer
 }
 

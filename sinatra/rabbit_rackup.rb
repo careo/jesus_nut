@@ -6,10 +6,11 @@ require 'mq'
 #require 'json'
 require 'uuid'
 
-require 'rabbited_sinatra'
+require 'hello'
 
 EM.run {
   EM.kqueue
+  #AMQP.logging = true
 
   def log *args
     p args
@@ -17,7 +18,7 @@ EM.run {
   
   amq = MQ.new
   #amq.queue(UUID.generate,:auto_delete => true).bind(amq.topic('requests',:auto_delete => true)).subscribe{ |info,request|
-  amq.queue("rabbit_rackup",:auto_delete => true).subscribe{ |info,request|
+  amq.queue("jesus_nut",:auto_delete => true).subscribe{ |info,request|
     #env = JSON.parse(request)
     env = Marshal.load(request)
 

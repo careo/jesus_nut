@@ -3,6 +3,6 @@ require 'sinatra'
 
 
 get "/" do
-  "Hello from Sinatra!<br/>It is now #{Time.new}"
+  "Hello from Sinatra!\nIt is now #{Time.now}\n"
 end
 
